@@ -118,12 +118,16 @@ jobs:
         if: steps.plan.outcome == 'failure'
         run: exit 1
 
-      - name: Compress TF Plan artifact
-        run: zip -r ${{ inputs.tf_key }}.zip ./*
+      # - name: Compress TF Plan artifact
+      #   #run: zip -r ${{ inputs.tf_key }}.zip ./* 
+      #   run: zip -r 
 
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v3.1.0
-        with:
-          name: "${{ inputs.tf_key }}"
-          path: "${{ inputs.path }}/${{ inputs.tf_key }}.zip"
-          retention-days: 5
+      # - name: Upload Artifact
+      #   uses: actions/upload-artifact@v3.1.0
+      #   with:
+      #     name: "${{ inputs.tf_key }}"
+      #     path: "${{ inputs.path }}/${{ inputs.tf_key }}.zip"
+      #     retention-days: 5
+
+     # path: 01_Foundation                ## Path to terraform root module (Required)
+     #  tf_key: foundation-dev
